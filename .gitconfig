@@ -2,29 +2,44 @@
 	name = Martin Woeginger
 	email = martin.woeginger@gmail.com
 [alias]
-    chp = cherry-pick
-    co = checkout
-    st = status
-    ci = commit
-    di = diff
-    dc = diff --cached
-    aa = add --all
-    head = log -1
-    # Log display from screencast, with train tracks.
-    l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
-    # Alternate log display from Scott Chacon
-    lol = log --pretty=oneline --abbrev-commit --graph --decorate
-    b = branch
+  chp = cherry-pick
+  co = checkout
+  st = status
+  ci = commit
+  di = diff
+  dc = diff --cached
+  aa = add --all
+  head = log -1
+          # Log display from screencast, with train tracks.
+  l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
+          # Alternate log display from Scott Chacon
+  lol = log --pretty=oneline --abbrev-commit --graph --decorate
+  b = branch
+
 [apply]
-	 whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  whitespace = fix
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
 [core]
-	 excludesfile = /Users/nexus/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  excludesfile = /Users/nexus/.gitignore_global
+
+[github]
+  user = electronicbites
 
 [push]
-	default = tracking
+  default = tracking
